@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Trigonometry Studio</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Animated Background -->
+    <div class="aurora aurora-one"></div>
+    <div class="aurora aurora-two"></div>
+    <div class="aurora aurora-three"></div>
+
+    <div class="particles">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <main class="container">
+
+        <!-- Header -->
+        <header class="header">
+
+            <div class="brand">
+                <div class="logo">∑</div>
+
+                <div>
+                    <h1>TRIGONOMETRY <span>STUDIO</span></h1>
+                    <p>Explore • Calculate • Understand</p>
+                </div>
+            </div>
+
+            <div class="badge">
+                <span class="live-dot"></span>
+                DEGREE MODE
+            </div>
+
+        </header>
+
+
+        <!-- Hero -->
+        <section class="hero">
+
+            <div class="hero-text">
+
+                <p class="eyebrow">ANGLE IDENTITY CALCULATOR</p>
+
+                <h2>
+                    Turn your angles into
+                    <span>beautiful mathematics.</span>
+                </h2>
+
+                <p class="hero-description">
+                    Enter values for A and B and instantly explore
+                    six fundamental angle-sum and angle-difference
+                    identities.
+                </p>
+
+            </div>
+
+            <div class="math-orbit">
+
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+
+                <div class="math-symbol">θ</div>
+
+                <span class="floating-symbol symbol-one">sin</span>
+                <span class="floating-symbol symbol-two">cos</span>
+                <span class="floating-symbol symbol-three">tan</span>
+
+            </div>
+
+        </section>
+
+
+        <!-- Input Card -->
+        <section class="calculator-card">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="mini-label">INPUT PARAMETERS</p>
+                    <h3>Choose your angles</h3>
+                </div>
+
+                <div class="degree-symbol">°</div>
+
+            </div>
+
+
+            <div class="inputs">
+
+                <div class="input-group">
+
+                    <label for="angleA">
+                        <span>A</span>
+                        Angle A
+                    </label>
+
+                    <div class="input-wrapper">
+                        <input
+                            type="number"
+                            id="angleA"
+                            placeholder="45"
+                            step="any"
+                        >
+                        <span>°</span>
+                    </div>
+
+                </div>
+
+
+                <div class="plus-symbol">+</div>
+
+
+                <div class="input-group">
+
+                    <label for="angleB">
+                        <span>B</span>
+                        Angle B
+                    </label>
+
+                    <div class="input-wrapper">
+                        <input
+                            type="number"
+                            id="angleB"
+                            placeholder="30"
+                            step="any"
+                        >
+                        <span>°</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="buttons">
+
+                <button class="calculate-btn" onclick="calculate()">
+                    <span>Calculate Identities</span>
+                    <span class="arrow">→</span>
+                </button>
+
+                <button class="reset-btn" onclick="resetCalculator()">
+                    Reset
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Results -->
+        <section class="results-section">
+
+            <div class="results-title">
+                <div>
+                    <p class="mini-label">CALCULATED RESULTS</p>
+                    <h3>Your six identities</h3>
+                </div>
+
+                <span class="result-count">06 RESULTS</span>
+            </div>
+
+
+            <div class="results-grid">
+
+                <!-- SIN A+B -->
+                <article class="result-card">
+
+                    <div class="card-top">
+                        <span class="function-name">SIN</span>
+                        <span class="identity">A + B</span>
+                    </div>
+
+                    <h4>sin(A + B)</h4>
+
+                    <p class="formula">
+                        sin A cos B + cos A sin B
+                    </p>
+
+                    <div class="result-value" id="sinPlus">
+                        —
+                    </div>
+
+                    <div class="card-glow"></div>
+
+                </article>
+
+
+                <!-- SIN A-B -->
+                <article class="result-card">
+
+                    <div class="card-top">
+                        <span class="function-name">SIN</span>
+                        <span class="identity">A − B</span>
+                    </div>
+
+                    <h4>sin(A − B)</h4>
+
+                    <p class="formula">
+                        sin A cos B − cos A sin B
+                    </p>
+
+                    <div class="result-value" id="sinMinus">
+                        —
+                    </div>
+
+                    <div class="card-glow"></div>
+
+                </article>
+
+
+                <!-- COS A+B -->
+                <article class="result-card">
+
+                    <div class="card-top">
+                        <span class="function-name">COS</span>
+                        <span class="identity">A + B</span>
+                    </div>
+
+                    <h4>cos(A + B)</h4>
+
+                    <p class="formula">
+                        cos A cos B − sin A sin B
+                    </p>
+
+                    <div class="result-value" id="cosPlus">
+                        —
+                    </div>
+
+                    <div class="card-glow"></div>
+
+                </article>
+
+
+                <!-- COS A-B -->
+                <article class="result-card">
+
+                    <div class="card-top">
+                        <span class="function-name">COS</span>
+                        <span class="identity">A − B</span>
+                    </div>
+
+                    <h4>cos(A − B)</h4>
+
+                    <p class="formula">
+                        cos A cos B + sin A sin B
+                    </p>
+
+                    <div class="result-value" id="cosMinus">
+                        —
+                    </div>
+
+                    <div class="card-glow"></div>
+
+                </article>
+
+
+                <!-- TAN A+B -->
+                <article class="result-card">
+
+                    <div class="card-top">
+                        <span class="function-name">TAN</span>
+                        <span class="identity">A + B</span>
+                    </div>
+
+                    <h4>tan(A + B)</h4>
+
+                    <p class="formula">
+                        (tan A + tan B) / (1 − tan A tan B)
+                    </p>
+
+                    <div class="result-value" id="tanPlus">
+                        —
+                    </div>
+
+                    <div class="card-glow"></div>
+
+                </article>
+
+
+                <!-- TAN A-B -->
+                <article class="result-card">
+
+                    <div class="card-top">
+                        <span class="function-name">TAN</span>
+                        <span class="identity">A − B</span>
+                    </div>
+
+                    <h4>tan(A − B)</h4>
+
+                    <p class="formula">
+                        (tan A − tan B) / (1 + tan A tan B)
+                    </p>
+
+                    <div class="result-value" id="tanMinus">
+                        —
+                    </div>
+
+                    <div class="card-glow"></div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- Formula Library -->
+        <section class="formula-library">
+
+            <div class="library-header">
+
+                <div>
+                    <p class="mini-label">FORMULA LIBRARY</p>
+                    <h3>Master the identities</h3>
+                </div>
+
+                <span>01 — 06</span>
+
+            </div>
+
+
+            <div class="formula-list">
+
+                <div class="formula-row">
+                    <span>01</span>
+                    <strong>sin(A + B)</strong>
+                    <p>sin A cos B + cos A sin B</p>
+                </div>
+
+                <div class="formula-row">
+                    <span>02</span>
+                    <strong>sin(A − B)</strong>
+                    <p>sin A cos B − cos A sin B</p>
+                </div>
+
+                <div class="formula-row">
+                    <span>03</span>
+                    <strong>cos(A + B)</strong>
+                    <p>cos A cos B − sin A sin B</p>
+                </div>
+
+                <div class="formula-row">
+                    <span>04</span>
+                    <strong>cos(A − B)</strong>
+                    <p>cos A cos B + sin A sin B</p>
+                </div>
+
+                <div class="formula-row">
+                    <span>05</span>
+                    <strong>tan(A + B)</strong>
+                    <p>(tan A + tan B) / (1 − tan A tan B)</p>
+                </div>
+
+                <div class="formula-row">
+                    <span>06</span>
+                    <strong>tan(A − B)</strong>
+                    <p>(tan A − tan B) / (1 + tan A tan B)</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer>
+
+            <div>
+                <strong>TRIGONOMETRY STUDIO</strong>
+                <span>Precision mathematics, beautifully presented.</span>
+            </div>
+
+            <p>Built with HTML • CSS • JavaScript</p>
+
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
